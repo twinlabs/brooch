@@ -10,7 +10,7 @@ describe('app.js', function(){
     assert.ok(true);
 
     // it sure would be weird is app.js didn't have SOME exports, at least for testing...:
-    assert.ok(typeof app !== "undefined", "if app.js doesn't have any exports, delete this test.");
+    assert.ok(typeof app.server !== "undefined", "if app.js doesn't have the core expected 'server' export, delete this test.");
   });
 });
 
