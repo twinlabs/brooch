@@ -17,14 +17,6 @@ app.set('view engine', 'jade');
 
 app.use(express.static(__dirname + '/app/assets'));
 
-app.get('/', function(request, response){
-  response.render('index');
-});
-
-app.get('/ui', function(request, response){
-  response.render('sandbox');
-});
-
 
 var server = app.listen(PORT);
 console.log('listening on port ' + PORT);
@@ -34,3 +26,5 @@ module.exports = {
   express: app,
   port: PORT
 };
+
+require('./routes');
