@@ -1,3 +1,5 @@
+![Build Status](https://travis-ci.org/twinlabs/brooch.png)
+
 Run App:
 ========
 `npm start`
