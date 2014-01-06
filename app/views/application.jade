@@ -1,0 +1,33 @@
+doctype html
+html(lang="en")
+  head
+    title Title
+    script.
+    link(rel="stylesheet" href="/stylesheets/base.css")
+    link(rel="stylesheet"
+      href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"
+    )
+
+    block head
+  body
+    .wrap
+      header
+        h1
+          span.logo &copy;
+          |  Header Text 
+          .fa.fa-warning
+          .fa.fa-asterisk
+        nav
+          ul
+            li
+              a(href="#") navigation
+            li
+              a(href="#") list
+            li
+              a(href="#") items
+            li
+              a(href="#") etc
+      block main
+      footer
+    script(src="javascripts/jquery.js")
+    block foot
