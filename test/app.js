@@ -1,9 +1,6 @@
 var assert = require('assert');
-var sinon = require('sinon');
 var app = require('../app');
 var http = require('http');
-
-var socketAddress = 'http://localhost:' + app.socket_port;
 
 // TODO: set a default log level of 'debug' here:
 
