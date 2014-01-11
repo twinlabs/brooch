@@ -18,7 +18,7 @@ describe('app.js', function(){
 describe('assets', function(){
   it('uses middleware to serve LESS assets as CSS', function(done){
     var request = http.request({
-      path: '/stylesheets/normalize.css',
+      path: '/stylesheets/lib/normalize.css',
       port: app.port
     }, function(response){
       assert(response.statusCode === 200, "status code not 200/OK");
