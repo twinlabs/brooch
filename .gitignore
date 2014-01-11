@@ -1,2 +1,2 @@
 node_modules
-app/assets/stylesheets/*.css
+app/assets/stylesheets/**/*.css
