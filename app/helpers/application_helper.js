@@ -1,4 +1,10 @@
 module.exports = function(app){
+  app.locals.environment = {
+    isDev: function(){
+      return app.get('env') === 'development';
+    }
+  };
+
   app.locals.coolPrinter = function(string, delimiter){
     var position = 0,
       output = '';
