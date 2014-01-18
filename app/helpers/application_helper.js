@@ -5,12 +5,14 @@ module.exports = function(app){
     }
   };
 
-  app.locals.coolPrinter = function(string, delimiter, ender){
+  app.locals.coolPrinter = function(string, delimiter, ender, breaker){
+    // TODO: refactor to take a map of options or something else nice!
     var position = 0,
       output = '',
       structure;
 
     delimiter = delimiter || '-';
+    breaker = breaker || '\\n';
 
     if (typeof ender === "undefined") {
       structure = [delimiter, string, delimiter];
@@ -36,7 +38,7 @@ module.exports = function(app){
       }
 
       if (position < structure.length - 1) {
-        output += '\\n';
+        output += breaker;
         position++;
         stringBuilder(string, structure);
       }
