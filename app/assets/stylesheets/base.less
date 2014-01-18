@@ -6,22 +6,36 @@
 html { height: 100%; }
 body { min-height: 100%; }
 
+html {
+  font-size: 62.5%;
+
+  @media @mobile {
+    font-size: 50%;
+  }
+}
 body {
   font-family: monospace, serif;
+  font-size: 1.6em;
 }
 
+@text-padding: 10px;
+
 header {
-  padding: 6em 0;
+  padding: 6em @text-padding;
 
   h1 {
     line-height: 1em;
   }
 }
 section {
-  padding: 4em 0;
+  padding: 4em @text-padding;
+
+  @media @mobile {
+    padding: 2em @text-padding;
+  }
 }
 footer {
-  padding: 1em 0;
+  padding: 1em @text-padding;
 }
 
 .code {
