@@ -1,0 +1,26 @@
+// Responsive Breakpoint Widths
+
+@min-full-desktop: 960px;
+@max-non-full-desktop: (@min-full-desktop - 1);
+
+@max-ipad-portrait: 768px;
+@max-ipad-landscape: 1024px;
+@max-less-than-ipad: (@max-ipad-portrait - 1);
+
+@max-mobile-landscape: 480px;
+@max-mobile-portrait: 320px;
+
+// Orientation Variables
+@portrait: ~"(orientation: portrait)";
+@landscape: ~"(orientation: landscape)";
+
+// Responsive Breakpoint Ranges
+@full-desktop: ~"screen and (min-width: @{min-full-desktop})";
+@less-than-desktop: ~"screen and (max-width: @{max-non-full-desktop})";
+@ipad-to-desktop: ~"screen and (min-width: @{max-ipad-portrait}) and (max-width: @{max-non-full-desktop})";
+@less-than-ipad: ~"screen and (max-width: @{max-less-than-ipad})";
+@mobile-landscape-to-ipad: ~"screen and (min-width: @{max-mobile-landscape}) and (max-width: @{max-less-than-ipad})";
+
+@ipad: ~"screen and (max-width: @{max-ipad-landscape})";
+@ipad-portrait: ~"screen and (max-width: @{max-ipad-portrait})";
+@mobile: ~"screen and (max-width: @{max-mobile-landscape})";
