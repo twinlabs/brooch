@@ -27,7 +27,7 @@ html(lang="en")
       block main
 
       footer.c
-        = new Date().getFullYear() + '.'
+        != coolPrinter('- ' + new Date().getFullYear() + ' -', {breaker: '<br/>'})
 
     script(src="javascripts/jquery.js")
     block foot

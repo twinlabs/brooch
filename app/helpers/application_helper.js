@@ -5,31 +5,29 @@ module.exports = function(app){
     }
   };
 
-  app.locals.coolPrinter = function(string, delimiter, ender, breaker){
-    // TODO: refactor to take a map of options or something else nice!
+  app.locals.coolPrinter = function(targetString, options){
+    options = options || {};
+
     var position = 0,
       output = '',
-      structure;
+      delimiter = options.delimiter || '-',
+      breaker = options.breaker || '\\n',
+      structure = options.structure || [delimiter, targetString, delimiter];
 
-    delimiter = delimiter || '-';
-    breaker = breaker || '\\n';
-
-    if (typeof ender === "undefined") {
-      structure = [delimiter, string, delimiter];
-    } else {
-      structure = [delimiter, string, delimiter, ender];
-    }
-
-    stringBuilder(string, structure);
+    stringBuilder(targetString, structure);
 
     return output;
 
-    function stringBuilder(string, structure){
+    function stringBuilder(targetString, structure){
       var counter = 0;
 
-      while (counter < string.length){
-        if (string === structure[position]){
-          output += structure[position];
+      while (counter < targetString.length){
+        if (
+            structure[position] === targetString ||
+            // `!!` signifies "simply use the targetString here":
+            structure[position] === "!!"
+        ){
+          output += targetString;
           break;
         }
 
@@ -40,7 +38,7 @@ module.exports = function(app){
       if (position < structure.length - 1) {
         output += breaker;
         position++;
-        stringBuilder(string, structure);
+        stringBuilder(targetString, structure);
       }
     }
   };

@@ -3,10 +3,10 @@ extends application
 block head
   if environment.isDev()
     script.
-      console.log('#{coolPrinter(appName, "-", "~")}' + '\n\n');
+      console.log('#{coolPrinter(appName, {structure: ["-", appName, "-", "~"]})}' + '\n\n');
 block main
   section.bg-yellow.c
-    pre !{coolPrinter("!!! Hello World !!!", "-", "", "<br/>")}
+    pre !{coolPrinter("!!! Hello World !!!", {structure:["-", "!!", "-"], breaker: "<br/>"})}
   section.bg-aqua.c
     pre This is <span class="code">Brooch</span>.
   section.bg-olive.c
