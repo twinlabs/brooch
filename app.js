@@ -12,6 +12,9 @@ app.use(lessMiddleware({
 app.set('views', process.cwd() + '/app/views');
 app.engine('jade', require('jade').__express);
 app.set('view engine', 'jade');
+app.set('appName', "Brooch");
+app.locals.appName = app.get('appName');
+
 
 // configure development environment:
 app.configure('development', function(){
