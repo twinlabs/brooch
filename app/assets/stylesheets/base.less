@@ -1,6 +1,8 @@
 @import "lib/normalize";
 @import "lib/colors/colors";
 @import "responsive";
+@import "oocss";
+@import "oocss-colors";
 
 html { height: 100%; }
 body { min-height: 100%; }
@@ -9,7 +11,15 @@ body {
   font-family: monospace, serif;
 }
 
-.wrap {
-  margin: 0 auto;
-  width: 960px;
+header {
+  padding: 6em 0;
+}
+section {
+  padding: 4em 0;
+}
+
+.code {
+  padding: 5px;
+  background-color: hsla(0, 0%, 100%, 0.3);
+  border-radius: 5px;
 }

@@ -5,9 +5,24 @@ block head
     script.
       console.log('#{coolPrinter(appName, "-", "~")}' + '\n\n');
 block main
-  section
-    pre Hello World
+  section.bg-yellow.c
+    pre Hello World.
+  section.bg-aqua.c
+    pre This is <span class="code">Brooch</span>.
+  section.bg-olive.c
+    pre Right now it is <em>small</em>.
+  section.bg-red.c
+    pre Some day it will be <strong>large</strong>.
+  section.bg-maroon.c
+    pre Currently the focuses aren't particularly '<em>small</em>' or <strong>large</strong>,
+  section.bg-silver.c
+    pre But rather, clean and fun-to-peruse...
+  section.bg-blue.c
+    pre Perhaps some day soon...
+  section.bg-orange.c
+    pre It'll be ready to use!
 block foot
+  .c= new Date().getFullYear() + '.'
   if environment.isDev()
     script.
       console.log('\n\n...\n' + new Date().getFullYear() + '.' );
