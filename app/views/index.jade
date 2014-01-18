@@ -22,7 +22,6 @@ block main
   section.bg-orange.c
     pre It'll be ready to use!
 block foot
-  .c= new Date().getFullYear() + '.'
   if environment.isDev()
     script.
       console.log('\n\n...\n' + new Date().getFullYear() + '.' );
