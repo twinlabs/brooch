@@ -18,6 +18,7 @@ app.set('view engine', 'jade');
 app.use(express.static(__dirname + '/app/assets'));
 
 require('./routes')(app);
+require('./app/helpers/application_helper')(app);
 
 var server = app.listen(PORT);
 console.log('listening on port ' + PORT);
