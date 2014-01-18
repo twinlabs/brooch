@@ -3,12 +3,12 @@ extends application
 block head
   if environment.isDev()
     script.
-      console.log('#{coolPrinter(appName)}' + '\n~~~');
+      console.log('#{coolPrinter(appName, "-", "~")}' + '\n\n');
 block main
   section
     pre Hello World
 block foot
   if environment.isDev()
     script.
-      console.log('...\n' + new Date().getFullYear() + '.' );
+      console.log('\n\n...\n' + new Date().getFullYear() + '.' );
       console.log("#{console.log('hello, server')}");

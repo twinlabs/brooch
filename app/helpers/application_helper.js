@@ -5,13 +5,20 @@ module.exports = function(app){
     }
   };
 
-  app.locals.coolPrinter = function(string, delimiter){
+  app.locals.coolPrinter = function(string, delimiter, ender){
     var position = 0,
-      output = '';
+      output = '',
+      structure;
 
     delimiter = delimiter || '-';
 
-    stringBuilder(string, [delimiter, string, delimiter]);
+    if (typeof ender === "undefined") {
+      structure = [delimiter, string, delimiter];
+    } else {
+      structure = [delimiter, string, delimiter, ender];
+    }
+
+    stringBuilder(string, structure);
 
     return output;
 
@@ -20,12 +27,8 @@ module.exports = function(app){
 
       while (counter < string.length){
         if (string === structure[position]){
-          output += '\\n' + structure[position] + '\\n';
+          output += structure[position];
           break;
-        }
-
-        if (counter === string.length) {
-          output += '\\n';
         }
 
         output += structure[position];
@@ -33,6 +36,7 @@ module.exports = function(app){
       }
 
       if (position < structure.length - 1) {
+        output += '\\n';
         position++;
         stringBuilder(string, structure);
       }
