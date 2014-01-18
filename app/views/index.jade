@@ -1,11 +1,14 @@
 extends application
 
 block head
-  // TODO: this following line should only fire in development 'environment'
-  script.
-    console.log('-----------\nHello World\n-----------');
+  if environment.isDev()
+    script.
+      console.log('#{coolPrinter(appName)}' + '\n~~~');
 block main
-  p Hello World
+  section
+    pre Hello World
 block foot
-  script.
-    console.log('...\n...\n2014.');
+  if environment.isDev()
+    script.
+      console.log('...\n' + new Date().getFullYear() + '.' );
+      console.log("#{console.log('hello, server')}");
