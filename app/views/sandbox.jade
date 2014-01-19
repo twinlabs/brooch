@@ -3,6 +3,7 @@ extends application
 block head
   style(type="text/less").
     @import "stylesheets/lib/colors/colors";
+    @import "stylesheets/responsive";
 
     .mp.first {
       padding: 10px;
@@ -10,10 +11,18 @@ block head
       color: @white;
       background: @olive;
 
+      @media @less-than-ipad {
+        width: 80%;
+      }
+
       p {
         margin: 4em auto;
         width: 80%;
         text-align: justify;
+
+        @media @less-than-ipad {
+          text-align: left;
+        }
       }
     }
 
