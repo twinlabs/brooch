@@ -29,9 +29,18 @@ header {
 }
 section {
   padding: 4em @text-padding;
+  -webkit-transition: padding 0.3s ease;
 
   @media @mobile {
     padding: 2em @text-padding;
+
+    &:hover {
+      padding: 6em @text-padding;
+    }
+  }
+
+  &:hover {
+    padding: 8em @text-padding;
   }
 }
 footer {
