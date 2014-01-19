@@ -10,6 +10,11 @@ block head
       width: 50%;
       color: @white;
       background: @olive;
+      -webkit-transition-property: width, height, background-color;
+
+      &:hover {
+        background: spin(@olive, 180);
+      }
 
       @media @less-than-ipad {
         width: 80%;
