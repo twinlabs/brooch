@@ -13,3 +13,53 @@
 .retain {
   color: inherit !important;
 }
+
+.modal-pinned, .mp {
+  top: 0; right: 0; bottom: 0; left: 0;
+  margin: auto;
+  height: 100%;
+  overflow: hidden;
+
+  position: relative;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+  -webkit-transition: 0.3s ease;
+  -webkit-transition-property: width, height;
+
+  &.hidden {
+    position: absolute;
+    bottom: 0;
+    width: 100% !important;
+    height: 3em;
+
+    .control {
+      top: 0; right: 0; bottom: 0;
+      margin: auto;
+      height: 50%;
+    }
+    .control.show {
+      display: block;
+      width: 100%;
+      text-align: right;
+    }
+
+    .control.hide {
+      display: none;
+    }
+  }
+
+  .control {
+    top: 10px; right: 10px;
+    position: absolute;
+    cursor: pointer;
+
+    &.show {
+      display: none;
+    }
+  }
+
+  h2 {
+    margin-top: 0;
+  }
+}

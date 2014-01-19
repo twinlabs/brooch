@@ -1,5 +1,50 @@
 extends application
 
+block head
+  style(type="text/less").
+    @import "stylesheets/lib/colors/colors";
+
+    .mp.first {
+      padding: 10px;
+      width: 50%;
+      color: @white;
+      background: @olive;
+
+      p {
+        margin: 4em auto;
+        width: 80%;
+        text-align: justify;
+      }
+    }
+
+  script(src="javascripts/less.js")
+
 block main
   section.c
     p 'Living' Style Guide, followed by an experimental sandbox for proving ideas.
+
+  section.c
+    .mp.first
+      .control.hide &times;
+      .control.show !
+      h2 This is a <span class="code">Modal</span>.
+      h4 It will always stay centered.
+      p.
+        In another moment Alice was through the glass, and had jumped lightly
+        down into the Looking-glass room. The very first thing she did was
+        to look whether there was a fire in the fireplace, and she was quite
+        pleased to find that there was a real one, blazing away as brightly as
+        the one she had left behind. 'So I shall be as warm here as I was in the
+        old room,' thought Alice: 'warmer, in fact, because there'll be no one
+        here to scold me away from the fire. Oh, what fun it'll be, when they
+        see me through the glass in here, and can't get at me!'
+
+block foot
+  script.
+    $('.mp .hide').on('click', function(event){
+      $(this).closest('.mp').addClass('hidden');
+    });
+
+    $('.mp .show').on('click', function(event){
+      $(this).closest('.mp').removeClass('hidden');
+    });
