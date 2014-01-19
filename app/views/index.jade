@@ -3,7 +3,7 @@ extends application
 block head
   if environment.isDev()
     script.
-      console.log('#{coolPrinter(appName, {structure: ["-", appName, "-", "~"]})}' + '\n\n');
+      console.log('#{coolPrinter( "|  " + appName + "  |", {structure:[".", "!!", "."]} )}');
 block main
   section.bg-yellow.c
     pre !{coolPrinter("!!! Hello World !!!", {structure:["-", "!!", "-"], breaker: "<br/>"})}
@@ -24,4 +24,4 @@ block main
 block foot
   if environment.isDev()
     script.
-      console.log('\n\n...\n' + new Date().getFullYear() + '.' );
+      console.log('\n\n    ' + new Date().getFullYear());

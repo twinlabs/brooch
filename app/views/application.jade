@@ -13,17 +13,14 @@ html(lang="en")
     .wrap
       header.c
         h1.ibm
-          | |{#{appName}}|
+          a(href="/").retain
+            | |{#{appName}}|
         nav.ibm
           ul
             li
-              a(href="#") navigation
+              a(href="/ui") sandbox
             li
-              a(href="#") list
-            li
-              a(href="#") items
-            li
-              a(href="#") etc
+              a(href="/faq") f.a.q.
       block main
 
       footer.c
