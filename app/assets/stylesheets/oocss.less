@@ -32,34 +32,35 @@
     bottom: 0;
     width: 100% !important;
     height: 3em;
+  }
 
-    .control {
-      top: 0; right: 0; bottom: 0;
-      margin: auto;
-      height: 50%;
-    }
-    .control.show {
+  h2 {
+    margin-top: 0;
+  }
+}
+
+.control {
+  top: 10px; right: 10px;
+  position: absolute;
+  cursor: pointer;
+
+  &.show {
+    display: none;
+  }
+
+  .hidden & {
+    top: 0; right: 0; bottom: 0;
+    margin: auto;
+    height: 50%;
+
+    &.show {
       display: block;
       width: 100%;
       text-align: right;
     }
 
-    .control.hide {
+    &.hide {
       display: none;
     }
-  }
-
-  .control {
-    top: 10px; right: 10px;
-    position: absolute;
-    cursor: pointer;
-
-    &.show {
-      display: none;
-    }
-  }
-
-  h2 {
-    margin-top: 0;
   }
 }
