@@ -15,12 +15,8 @@ app.set('view engine', 'jade');
 app.set('appName', "Brooch");
 app.locals.appName = app.get('appName');
 
+require('./config/environments.js')(app);
 
-// configure development environment:
-app.configure('development', function(){
-  app.locals.pretty = true;
-  // TODO: set a default log level of 'debug' in dev 'environment' here:
-});
 
 app.use(express.static(__dirname + '/app/assets'));
 
