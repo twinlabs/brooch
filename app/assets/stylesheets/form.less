@@ -1,0 +1,29 @@
+input[type="checkbox"] {
+  // primitive CSS 'feature detection'.
+  // if the browser supports the 'checked' pseudo-element,
+  // we don't display the default input:
+  &:checked, &:not(:checked){ display: none; }
+
+  &:checked + label:before,
+  &:not(:checked) + label:before {
+    display: inline-block;
+  }
+
+  & + label:before {
+    display: none;
+    content: '';
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+    background-image: url("../images/check.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    vertical-align: middle;
+  }
+
+  &:checked + label:before {
+    background-position: 0 -20px;
+  }
+}
+
+
